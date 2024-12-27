@@ -1,0 +1,57 @@
+#include <bits/stdc++.h>
+using namespace std;
+
+int total_sum;
+
+class TreeNode
+{
+public:
+    int val;
+    TreeNode *left;
+    TreeNode *right;
+};
+
+int bottomToTopSum(TreeNode *curr)
+{
+    if (!curr)
+        return 0;
+
+    int val = curr->val;
+
+    int right = bottomToTopSum(curr->right);
+
+    int left = bottomToTopSum(curr->left);
+
+    curr->val = right;
+
+    int sum = left + right + curr->val;
+
+    return sum;
+}
+
+void topToBottomSum(TreeNode *curr, int sum)
+{
+    if (!curr)
+        return;
+
+    
+
+    
+}
+
+void solve(TreeNode *root)
+{
+
+    // find total sum of all node;
+    bottomToTopSum(root, false);
+}
+
+int main()
+{
+    int t;
+    cin >> t;
+    while (t--)
+    {
+        solve();
+    }
+}
